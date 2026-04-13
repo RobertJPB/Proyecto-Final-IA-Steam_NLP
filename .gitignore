@@ -1,0 +1,25 @@
+# Credenciales — NUNCA subir a Git
+.env
+
+# Datos generados
+data/resultados_nlp.xlsx
+data/analisis_sentimientos.png
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# OS
+.DS_Store
+Thumbs.db

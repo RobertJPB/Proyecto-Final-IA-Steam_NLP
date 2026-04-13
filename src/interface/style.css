@@ -1,0 +1,31 @@
+/*
+style.css
+---------
+Hoja de estilos principal para la aplicacion Streamlit.
+Separamos este codigo visual de la logica en Python para facilitar
+el mantenimiento y escalabilidad del Frontend.
+*/
+
+.stApp { background-color: #0e1117; }
+.metric-card {
+    background: #1a1f2e;
+    border-radius: 12px;
+    padding: 20px 24px;
+    text-align: center;
+}
+.metric-number { font-size: 2.2rem; font-weight: 700; }
+.metric-label  { font-size: 0.85rem; color: #aaa; margin-top: 4px; }
+.tag {
+    display: inline-block;
+    background: #1f3a5f;
+    color: #7ec8e3;
+    border-radius: 6px;
+    padding: 2px 10px;
+    margin: 2px 3px;
+    font-size: 0.78rem;
+}
+.badge-pos { background:#1a3d2b; color:#4caf82; border-radius:6px; padding:3px 10px; font-weight:600; }
+.badge-neg { background:#3d1a1a; color:#e57373; border-radius:6px; padding:3px 10px; font-weight:600; }
+.badge-neu { background:#2a2a1a; color:#f0c040; border-radius:6px; padding:3px 10px; font-weight:600; }
+.badge-mix { background:#2a1a3d; color:#c084fc; border-radius:6px; padding:3px 10px; font-weight:600; }
+.badge-err { background:#3d2a1a; color:#fb923c; border-radius:6px; padding:3px 10px; font-weight:600; }

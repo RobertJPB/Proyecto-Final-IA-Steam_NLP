@@ -1,0 +1,39 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Lanzar Interfaz (Web)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "streamlit",
+            "args": [
+                "run",
+                "${workspaceFolder}/src/interface/app.py",
+                "--server.port",
+                "8501",
+                "--browser.gatherUsageStats",
+                "false"
+            ],
+            "jitConfigurable": false
+        },
+        {
+            "name": "Lanzar Consola (CLI)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/interface/main.py",
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONUTF8": "1"
+            }
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Lanzar Sistema Completo",
+            "configurations": [
+                "Lanzar Interfaz (Web)",
+                "Lanzar Consola (CLI)"
+            ]
+        }
+    ]
+}
