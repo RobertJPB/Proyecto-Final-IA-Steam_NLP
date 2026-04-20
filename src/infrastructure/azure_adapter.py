@@ -69,5 +69,5 @@ class AzureNLPAdapter:
                 if doc.is_error:
                     etiquetas_por_texto.append([])
                 else:
-                    etiquetas_por_texto.append(doc.key_phrases[:5])
+                    etiquetas_por_texto.append(doc.key_phrases[:10])
         return etiquetas_por_texto

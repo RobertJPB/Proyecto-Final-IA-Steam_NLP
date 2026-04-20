@@ -49,10 +49,26 @@ class AnalysisService:
         if total == 0:
             return {}
 
+        # Asegurar que num_etiquetas sea numérico para el cálculo
+        avg_etiquetas = pd.to_numeric(df["num_etiquetas"], errors='coerce').mean()
+        
         return {
             "total": total,
             "positivos": (df["sentimiento"] == "positive").sum(),
             "negativos": (df["sentimiento"] == "negative").sum(),
             "neutros":   (df["sentimiento"] == "neutral").sum(),
-            "promedio_etiquetas": df["num_etiquetas"].mean()
+            "mixtos":    (df["sentimiento"] == "mixed").sum(),
+            "total_etiquetas": int(df["num_etiquetas"].sum()),
+            "promedio_etiquetas": avg_etiquetas if not pd.isna(avg_etiquetas) else 0.0
         }
+    def obtener_top_etiquetas(self, df: pd.DataFrame, top_n: int = 10) -> pd.Series:
+        """Extrae y cuenta la frecuencia de cada etiqueta en el DataFrame."""
+        todas = []
+        for tags in df["etiquetas"].dropna():
+            if isinstance(tags, str) and tags.strip():
+                todas.extend([t.strip().lower() for t in tags.split(",")])
+        
+        if not todas:
+            return pd.Series(dtype=int)
+            
+        return pd.Series(todas).value_counts().head(top_n)

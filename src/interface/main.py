@@ -1,8 +1,7 @@
 """
 interface/main.py
 -----------------
-Punto de entrada para ejecución por consola (CLI).
-Demuestra el uso de la arquitectura de capas.
+Punto de entrada para ejecución por consola 
 """
 
 import sys
